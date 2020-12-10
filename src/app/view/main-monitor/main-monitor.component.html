@@ -1,0 +1,105 @@
+<mat-card class="mat-card-top">
+    <mat-card-title class="mat-card-title-top">
+        <mat-list-item>
+            <span class="top-title"  [routerLink]="['']" (click)="backButton()" *ngIf="this.settingService.englishMode">
+                Monty Hall Problem
+            </span>
+            <span class="top-title"  [routerLink]="['']" (click)="backButton()" *ngIf="!this.settingService.englishMode">
+                モンティホール問題
+            </span>
+        </mat-list-item>
+    </mat-card-title>
+
+    <div class="about-monty-container">
+        <span class="about-monty-button-container">
+            <a class="link-monty-hole" href="https://en.wikipedia.org/wiki/Monty_Hall_problem">
+                <button class="about-monty-button" mat-raised-button color="warn" *ngIf="this.settingService.englishMode">
+                    <span>About Monty Hall Problem</span>
+                </button>
+            </a>
+    
+            <a class="link-monty-hole" href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BB%E3%83%9B%E3%83%BC%E3%83%AB%E5%95%8F%E9%A1%8C">
+                <button class="about-monty-button" mat-raised-button color="warn" *ngIf="!this.settingService.englishMode">
+                    <span>モンティホール問題とは</span>
+                </button>
+            </a>
+        </span>
+    </div>
+</mat-card>
+
+<div class="top-config-container">
+    <mat-card>
+        <mat-card-title>
+            <mat-list-item style="font-weight: bolder;">
+                <span *ngIf="this.settingService.englishMode" class="configs-title">Setting</span>
+                <span *ngIf="!this.settingService.englishMode" class="configs-title">設定</span>
+            </mat-list-item>
+        </mat-card-title>
+    
+        <mat-divider class="mat-divider-top"></mat-divider>
+
+        <setting class="config-container"
+            (currentSelectedTheNumberOfDoors)="getCurrentSelectedTheNumberOfDoors($event)">
+        </setting>
+    </mat-card>
+</div>
+
+<div class="door-excute-container">
+    <mat-card>
+        <mat-card-title>
+            <mat-list-item style="font-weight: bolder;">
+                <span *ngIf="this.settingService.englishMode" class="doors-title">Doors</span>
+                <span *ngIf="!this.settingService.englishMode" class="doors-title">扉</span>
+            </mat-list-item>
+        </mat-card-title>
+
+        <mat-divider class="mat-divider-top"></mat-divider>
+
+        <div class="door-container">
+            <div *ngFor="let door of doors; let i = index">
+                <button [disabled]="!this.settingService.manual" class="door" (click)="openTheDoor(i)" mat-raised-button *ngIf="door === undefined" class="button door" id='{{i}}'>
+                    <span *ngIf="this.settingService.englishMode && this.settingService.cheatingMode">Lost</span>
+                    <span *ngIf="!this.settingService.englishMode && this.settingService.cheatingMode">ハズレ</span>
+                    <img src="assets/door.png" alt="">
+                </button>
+            
+                <button [disabled]="!this.settingService.manual" class="door" (click)="openTheDoor(i)" mat-raised-button *ngIf="door != undefined" class="button door" id='{{i}}'>
+                    <span *ngIf="this.settingService.englishMode && this.settingService.cheatingMode" class="string-content">Win</span>
+                    <span *ngIf="!this.settingService.englishMode && this.settingService.cheatingMode" class="string-content">アタリ</span>
+                    <img src="assets/door.png" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="excute-button-container">
+            <button class="excute-button" [disabled]="this.settingService.manual" mat-raised-button (click)="autoExcute()">
+                <span *ngIf="this.settingService.englishMode">Auto Excute</span>
+                <span *ngIf="!this.settingService.englishMode">自動実行する</span>
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+</div>
+
+
+<div class="result-container">
+    <mat-card class="mat-card">
+        <mat-list>
+            <mat-card-title>
+                <mat-list-item style="font-weight: bolder;">
+                    <span *ngIf="this.settingService.englishMode" class="result-title">Result</span>
+                    <span *ngIf="!this.settingService.englishMode" class="result-title">結果</span>
+                </mat-list-item>
+            </mat-card-title>
+
+            <mat-divider class="mat-divider-top"></mat-divider>
+
+            <result>
+            </result>
+        </mat-list>
+    </mat-card>
+</div>
+
+<span class="copy-right-container">
+    <span class="copy-right">&copy;HarutoKatayama</span>
+</span>

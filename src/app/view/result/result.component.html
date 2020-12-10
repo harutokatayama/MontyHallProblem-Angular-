@@ -1,0 +1,44 @@
+<mat-list-item>
+    <div>
+        <span *ngIf="this.settingService.englishMode">excuteCount: {{this.excuteService.excuteCount}}</span>
+        <span *ngIf="!this.settingService.englishMode">実行回数: {{this.excuteService.excuteCount}}</span>
+    </div>
+</mat-list-item>
+
+<mat-divider></mat-divider>
+
+<mat-list-item>
+    <div>
+        <span *ngIf="this.settingService.englishMode">winCount: {{this.excuteService.winCount}}</span>
+        <span *ngIf="!this.settingService.englishMode">アタリを引いた回数: {{this.excuteService.winCount}}</span>
+    </div>
+</mat-list-item>
+
+<mat-divider></mat-divider>
+
+<mat-list-item>
+    <div>
+        <span *ngIf="this.settingService.englishMode">lostCount: {{this.excuteService.lostCount}}</span>
+        <span *ngIf="!this.settingService.englishMode">ハズレを引いた回数: {{this.excuteService.lostCount}}</span>
+    </div>
+</mat-list-item>
+
+<mat-divider></mat-divider>
+
+<mat-list-item>
+    <div>
+        <span *ngIf="this.settingService.englishMode">winRate: {{this.excuteService.winRate}}%</span>
+        <span *ngIf="!this.settingService.englishMode">勝率: {{this.excuteService.winRate}}%</span>
+    </div>
+</mat-list-item>
+
+<mat-divider></mat-divider>
+
+<mat-list-item>
+    <button class="reset-button" mat-raised-button (click)="countReset()" color="accent">
+        <span *ngIf="this.settingService.englishMode">Reset</span>
+        <span *ngIf="!this.settingService.englishMode">リセット</span>
+    </button>
+</mat-list-item>
+
+

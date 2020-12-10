@@ -1,0 +1,73 @@
+<div class="config-container">
+    <div class="mode-container">
+        <div class="language-button-container">
+            <button *ngIf="englishMode" class="language-button" (click)="changeLanguageMode()" mat-raised-button>Japanese</button>
+            <button *ngIf="!englishMode" class="language-button" (click)="changeLanguageMode()" mat-raised-button>英語</button>
+        </div>
+        
+        <button (click)="autoMode()" class="auto-button" [disabled]="this.settingService.confirmFlag" [ngClass]="{'active': this.settingService.auto === true}" mat-raised-button>
+            <span *ngIf="englishMode">Auto Mode</span>
+            <span *ngIf="!englishMode">オートモード</span>
+        </button>
+        <button (click)="manualMode()" class="manual-button" [ngClass]="{'active': this.settingService.manual === true}" mat-raised-button>
+            <span *ngIf="englishMode">Manual Mode</span>
+            <span *ngIf="!englishMode">手動モード</span>
+        </button>
+    </div>
+    
+    
+    <div class="config-number-container">
+        <mat-form-field appearance="fill">
+            <mat-label>
+                <span *ngIf="englishMode">The Number of Doors</span>
+                <span *ngIf="!englishMode">扉の数</span>
+            </mat-label>
+            <mat-select [(value)]="this.settingService.defaultTheNumberOfDoors">
+                <mat-option  #matOption *ngFor="let theNumberOfDoor of theNumberOfDoors" [value]="theNumberOfDoor" (click)="select(theNumberOfDoor)">
+                    {{theNumberOfDoor}}
+                </mat-option>
+            </mat-select>
+            <mat-hint>
+                <span *ngIf="englishMode">You can choose the number of doors here!</span>
+                <span *ngIf="!englishMode">扉の数を選択できます！</span>
+            </mat-hint>
+        </mat-form-field>
+        
+        <div class="height-justifier" style="display: inline;">
+            <mat-form-field>
+                <mat-label>
+                    <span *ngIf="englishMode">Number of trials(max is 9999999)</span>
+                    <span *ngIf=!englishMode>試行回数(最大 9999999)</span>
+                </mat-label>
+                <input matInput [disabled]="this.settingService.manual" [(ngModel)]="numberOfTrials" type="tel" maxlength="7" (input)="enterNumberOfTrials($event)">
+                <button mat-button [disabled]="this.settingService.manual" *ngIf="numberOfTrials" matSuffix mat-icon-button aria-label="Clear" (click)="numberOfTrials=null">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <mat-hint>
+                    <span *ngIf="englishMode">You can enter number of trials!</span>
+                    <span *ngIf="!englishMode">試行回数を入力してください！</span>
+                </mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="toggle-container">
+        <mat-slide-toggle [disabled]="this.settingService.manual" [checked]="changeDoorMode" (change)="toggleChangeDoorMode()">
+            <div class="labelOfToggle" *ngIf="englishMode">change door</div>
+            <div class="labelOfToggle" *ngIf="!englishMode">扉を変更する</div>
+        </mat-slide-toggle>
+        
+        
+        <mat-slide-toggle [disabled]="this.settingService.manual" [checked]="autoResetMode" (change)="toggleAutoResetMode()">
+            <div class="labelOfToggle" *ngIf="englishMode">reset results</div>
+            <div class="labelOfToggle" *ngIf="!englishMode">結果をリセットする</div>
+        </mat-slide-toggle>
+        
+        
+        <mat-slide-toggle [checked]="cheatingMode" (change)="toggleCheatingMode()">
+            <div class="labelOfToggle" *ngIf="englishMode">cheating</div>
+            <div class="labelOfToggle" *ngIf="!englishMode">ドアの中身を表示</div>
+        </mat-slide-toggle>
+    </div>    
+</div>
+

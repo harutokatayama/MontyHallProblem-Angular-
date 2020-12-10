@@ -1,0 +1,88 @@
+.app-title {
+    /*100%になっていたため中央寄せできなかったので50%に*/
+    width: 50%;
+    text-align: center;
+    /*中央寄せ*/
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10%;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+.playButton {
+    margin-top: 6%;
+}
+
+.playButton:hover {
+    background-color: rgb(255, 30, 49);
+    color: black;
+}
+
+.copy-right-container {
+    display: flex;
+    justify-content: center;
+}
+
+.copy-right {
+    position: absolute;
+    bottom: 24px;
+}
+
+@media screen and (max-width: 500px) {
+    .app-title {
+        font-size: 50px;
+        margin-top: 20%;
+    }
+    .playButton {
+        width: 120px;
+        height: 60px;
+        position: relative;
+        top: 130px;
+    }
+    .button-string {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 758px) {
+    .app-title {
+        font-size: 70px;
+        margin-top: 20%;
+    }
+    .playButton {
+        width: 145px;
+        height: 80px;
+    }
+    .button-string {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 759px) and (max-width: 1200px) {
+    .app-title {
+        font-size: 100px;
+    }
+    .playButton {
+        width: 170px;
+        height: 80px;
+    }
+    .button-string {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 2400px) {
+    .app-title {
+        font-size: 125px;
+    }
+    .playButton {
+        width: 195px;
+        height: 80px;
+    }
+    .button-string {
+        font-size: 35px;
+    }
+}

@@ -1,0 +1,59 @@
+.config-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mode-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 9px;
+    margin-left: 5%;
+}
+
+.language-button {
+    width: 120px;
+}
+
+.auto-button {
+    width: 120px;
+}
+
+.manual-button {
+    width: 120px;
+}
+
+.config-number-container {
+    position: relative;
+    top: 9px;
+    margin-left: 5%;
+}
+
+.toggle-container {
+    display : flex;
+    flex-direction: column;
+    position: relative;
+    top: 9px;
+    margin-left: 5%;
+}
+
+.labelOfToggle {
+    width: 144px;
+}
+
+.active {
+    background-color: crimson;
+}
+
+.deactive {
+    pointer-events: none;
+}
+
+.mat-form-field-wrapper {
+    background-color: #EBEBEB;
+}
+
+.height-justifier ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    height: 50.5px;
+}

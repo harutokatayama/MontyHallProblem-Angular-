@@ -1,0 +1,14 @@
+.mat-divider-top {
+    border-top-width: 3px;
+}
+
+.reset-button {
+    position: relative;
+    margin-top: 15px;
+    width: 88px;
+    height: 36px;
+}
+
+.mat-list {
+    padding-top: 0;
+}
