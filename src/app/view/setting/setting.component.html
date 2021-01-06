@@ -36,7 +36,7 @@
         <div class="height-justifier" style="display: inline;">
             <mat-form-field>
                 <mat-label>
-                    <span *ngIf="englishMode">Number of trials(max is 9999999)</span>
+                    <span *ngIf="englishMode">Number of Excutions(max is 9999999)</span>
                     <span *ngIf=!englishMode>試行回数(最大 9999999)</span>
                 </mat-label>
                 <input matInput [disabled]="this.settingService.manual" [(ngModel)]="numberOfTrials" type="tel" maxlength="7" (input)="enterNumberOfTrials($event)">
@@ -44,7 +44,7 @@
                     <mat-icon>close</mat-icon>
                 </button>
                 <mat-hint>
-                    <span *ngIf="englishMode">You can enter number of trials!</span>
+                    <span *ngIf="englishMode">You can enter number of excutions!</span>
                     <span *ngIf="!englishMode">試行回数を入力してください！</span>
                 </mat-hint>
             </mat-form-field>
