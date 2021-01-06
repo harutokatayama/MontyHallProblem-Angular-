@@ -26,11 +26,15 @@ npm installを用いて、Angular Materialをインストールする(`/monty-ha
 <br>
 プロジェクトの`\monty-hall-problem`ディレクトリ内で`ng serve`を実行することで、 `http://localhost:4200/`にアクセスできるようになります。
 <br>
+
 <br>
+
 ## How to use
 <br>
+
 ### Top
 <br>
+
 #### PLAYボタン
 Main画面に遷移する。
 <br>
