@@ -14,7 +14,7 @@ export class MainMonitorComponent implements OnInit {
   public theNubmerOfDoor: number = this.settingService.defaultTheNumberOfDoors;
 
   constructor(
-    private settingService: SettingService,
+    public settingService: SettingService,
     private excuteService: ExcuteService) { }
 
   /**

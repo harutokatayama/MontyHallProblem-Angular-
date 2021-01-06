@@ -3,7 +3,7 @@
 このプロジェクトを用いて、モンティホール問題が、実際にどのような結果になるのかを、様々な条件のもと、確認することができます。
 <br>
 <br>
-このプロジェクトは [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29 によって作成されました。
+このプロジェクトは [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5 によって作成されました。
 <br>
 <br>
 

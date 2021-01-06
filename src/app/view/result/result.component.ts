@@ -10,8 +10,8 @@ import { SettingService } from 'src/app/service/setting.service';
 export class ResultComponent {
   constructor(
     // HTMLの表示で使用
-    private settingService: SettingService,
-    private excuteService: ExcuteService,
+    public settingService: SettingService,
+    public excuteService: ExcuteService,
   ) { }
 
  /**click

@@ -27,7 +27,7 @@ export class SettingComponent implements OnInit {
 
   // コンストラクタ
   constructor(
-    private settingService: SettingService,
+    public settingService: SettingService,
     private excuteService: ExcuteService) { }
 
   /**
