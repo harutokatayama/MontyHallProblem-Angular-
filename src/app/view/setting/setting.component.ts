@@ -63,21 +63,23 @@ export class SettingComponent implements OnInit {
    * 選択されている扉の数を取得
    * @param theNumberOfDoor 扉の数
    */
-  public select(theNumberOfDoor) {
-    this.selectedTheNumberOfDoors = theNumberOfDoor;
-    this.settingService.selectedTheNumberOfDoors = this.selectedTheNumberOfDoors;
+  public select(event, theNumberOfDoor) {
+    if (event.source.selected) {
+      this.selectedTheNumberOfDoors = theNumberOfDoor;
+      this.settingService.selectedTheNumberOfDoors = this.selectedTheNumberOfDoors;
 
-    if (this.settingService.manual) {
-      // disabledになっている扉があれば解除する
-      const el = document.querySelectorAll('.button');
-      el.forEach((node) => {
-        node.removeAttribute('disabled');
-      });
-      // confirmを表示させるようリセット
-      this.excuteService.confirmChange = false;
+      if (this.settingService.manual) {
+        // disabledになっている扉があれば解除する
+        const el = document.querySelectorAll('.button');
+        el.forEach((node) => {
+          node.removeAttribute('disabled');
+        });
+        // confirmを表示させるようリセット
+        this.excuteService.confirmChange = false;
+      }
+
+      this.currentSelectedTheNumberOfDoors.emit(this.selectedTheNumberOfDoors);
     }
-
-    this.currentSelectedTheNumberOfDoors.emit(this.selectedTheNumberOfDoors);
   }
 
   /**input

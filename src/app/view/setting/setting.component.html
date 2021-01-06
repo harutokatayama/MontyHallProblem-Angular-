@@ -23,7 +23,7 @@
                 <span *ngIf="!englishMode">扉の数</span>
             </mat-label>
             <mat-select [(value)]="this.settingService.defaultTheNumberOfDoors">
-                <mat-option  #matOption *ngFor="let theNumberOfDoor of theNumberOfDoors" [value]="theNumberOfDoor" (onSelectionChange)="select(theNumberOfDoor)" (click)="select(theNumberOfDoor)">
+                <mat-option  #matOption *ngFor="let theNumberOfDoor of theNumberOfDoors" [value]="theNumberOfDoor" (onSelectionChange)="select($event, theNumberOfDoor)" (click)="select(theNumberOfDoor)">
                     {{theNumberOfDoor}}
                 </mat-option>
             </mat-select>
