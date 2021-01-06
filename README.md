@@ -6,13 +6,14 @@
 このプロジェクトは [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29 によって作成されました。
 <br>
 <br>
-<br>
+
 ## issues
 <br>
 ・扉の数をクリックではなくエンターで変更した際に、見た目が変わらない不具合の対応
 <br>
 <br>
 <br>
+
 ## 環境構築
 <br>
 Node.js/npmをインストールする(`http://nodejs.org/`)。
