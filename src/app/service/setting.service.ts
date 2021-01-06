@@ -4,36 +4,36 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SettingService {
-  //自動モード
+  // 自動モード
   public auto = true;
-  //手動モード
+  // 手動モード
   public manual = false;
-  //扉の数の選択肢
+  // 扉の数の選択肢
   public theNumberOfDoors: any[] = [3, 5, 10];
-  //設定中の扉の数
+  // 設定中の扉の数
   public selectedTheNumberOfDoors: number;
-  //試行回数
-  public numberOfTrials:number = 100;
-  //デフォルトの扉の数
+  // 試行回数
+  public numberOfTrials = 100;
+  // デフォルトの扉の数
   public defaultTheNumberOfDoors: number = this.theNumberOfDoors[0];
-  //現在設定中の試行回数
+  // 現在設定中の試行回数
   public selectedNumberOfTrials: number;
-  //ハズレの扉が開閉された後に開ける扉を変更するかどうか
-  public changeDoorMode: boolean = true;
-  //オート実行するたびに、値をリセットするか
-  public autoResetMode: boolean = false;
-  //扉の中身を表示するか否か
-  public cheatingMode: boolean = false;
-  //英語モード
-  public englishMode: boolean = true;
-  //excute.serviceの確認フラグを反映
-  public confirmFlag: boolean = false;
+  // ハズレの扉が開閉された後に開ける扉を変更するかどうか
+  public changeDoorMode = true;
+  // オート実行するたびに、値をリセットするか
+  public autoResetMode = false;
+  // 扉の中身を表示するか否か
+  public cheatingMode = false;
+  // 英語モード
+  public englishMode = true;
+  // excute.serviceの確認フラグを反映
+  public confirmFlag = false;
 
   constructor() {}
 
   /**
    * オートモードの反映
-   * @param 
+   * @param /
    */
   public changeAutoMode() {
     this.auto = true;
@@ -42,7 +42,7 @@ export class SettingService {
 
   /**
    * 手動モードの反映
-   * @param 
+   * @param /
    */
   public changeManualMode() {
     this.auto = false;
@@ -51,7 +51,7 @@ export class SettingService {
 
   /**
    * 試行回数の反映
-   * @param num
+   * @param /num
    */
   public saveNumberOfTrials(num) {
     this.numberOfTrials = num;
@@ -59,7 +59,7 @@ export class SettingService {
 
   /**
    * 扉変更モードの反映
-   * @param changeDoor
+   * @param /changeDoor
    */
   public saveChangeDoors(changeDoor) {
     this.changeDoorMode = changeDoor;
@@ -67,7 +67,7 @@ export class SettingService {
 
   /**
    * リセットモードの反映
-   * @param autoReset
+   * @param /autoReset
    */
   public saveAutoReset(autoReset) {
     this.autoResetMode = autoReset;
@@ -75,7 +75,7 @@ export class SettingService {
 
   /**
    * //扉の中身を表示するか隠すかモード
-   * @param cheatingMode
+   * @param /cheatingMode
    */
   public saveCheatingMode(cheatingMode) {
     this.cheatingMode = cheatingMode;

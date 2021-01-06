@@ -10,29 +10,29 @@ import { SettingService } from '../../service/setting.service';
 export class SettingComponent implements OnInit {
   @Output() currentSelectedTheNumberOfDoors = new EventEmitter<number>();
 
-  //扉の数の選択肢
+  // 扉の数の選択肢
   public theNumberOfDoors: any[] = [];
-  //設定中の扉の数
+  // 設定中の扉の数
   public selectedTheNumberOfDoors: any = this.settingService.defaultTheNumberOfDoors;
-  //試行回数
-  public numberOfTrials:number;
-  //扉変更モード
+  // 試行回数
+  public numberOfTrials: number;
+  // 扉変更モード
   public changeDoorMode: boolean;
-  //オートリセットモード
+  // オートリセットモード
   public autoResetMode: boolean;
-  //ドアの中身を知るモード
+  // ドアの中身を知るモード
   public cheatingMode: boolean;
-  //英語モード
+  // 英語モード
   public englishMode: boolean;
 
-  //コンストラクタ
+  // コンストラクタ
   constructor(
     private settingService: SettingService,
     private excuteService: ExcuteService) { }
 
   /**
-   *初期化
-   * @param 
+   * 初期化
+   * @param /
    */
   ngOnInit() {
     this.theNumberOfDoors = this.settingService.theNumberOfDoors;
@@ -44,23 +44,23 @@ export class SettingComponent implements OnInit {
   }
 
   /**click
-   *自動モード切替
-   * @param 
+   * 自動モード切替
+   * @param /
    */
   public autoMode() {
     this.settingService.changeAutoMode();
   }
 
   /**click
-   *手動モード切替
-   * @param 
+   * 手動モード切替
+   *
    */
   public manualMode() {
     this.settingService.changeManualMode();
   }
 
   /**click
-   *選択されている扉の数を取得
+   * 選択されている扉の数を取得
    * @param theNumberOfDoor 扉の数
    */
   public select(theNumberOfDoor) {
@@ -68,12 +68,12 @@ export class SettingComponent implements OnInit {
     this.settingService.selectedTheNumberOfDoors = this.selectedTheNumberOfDoors;
 
     if (this.settingService.manual) {
-      //disabledになっている扉があれば解除する
-      let el = document.querySelectorAll('.button');
+      // disabledになっている扉があれば解除する
+      const el = document.querySelectorAll('.button');
       el.forEach((node) => {
         node.removeAttribute('disabled');
       });
-      //confirmを表示させるようリセット
+      // confirmを表示させるようリセット
       this.excuteService.confirmChange = false;
     }
 
@@ -81,16 +81,16 @@ export class SettingComponent implements OnInit {
   }
 
   /**input
-   *試行回数の入力
-   * @param event
+   * 試行回数の入力
+   * @param /event
    */
   public enterNumberOfTrials(event) {
     this.settingService.saveNumberOfTrials(event.target.value);
   }
 
   /**change
-   *扉変更スイッチを入れ替える
-   * @param 
+   * 扉変更スイッチを入れ替える
+   * @param /
    */
   public toggleChangeDoorMode() {
     this.changeDoorMode = !this.changeDoorMode;
@@ -98,8 +98,8 @@ export class SettingComponent implements OnInit {
   }
 
   /**change
-   *リセットスイッチを入れ替える
-   * @param 
+   * リセットスイッチを入れ替える
+   * @param /
    */
   public toggleAutoResetMode() {
     this.autoResetMode = !this.autoResetMode;
@@ -107,8 +107,8 @@ export class SettingComponent implements OnInit {
   }
 
   /**change
-   *リセットスイッチを入れ替える
-   * @param 
+   * リセットスイッチを入れ替える
+   * @param /
    */
   public toggleCheatingMode() {
     this.cheatingMode = !this.cheatingMode;
@@ -117,7 +117,7 @@ export class SettingComponent implements OnInit {
 
   /**click
    * 言語スイッチを入れ替える
-   * @param 
+   * @param /
    */
   public changeLanguageMode() {
     this.englishMode = !this.englishMode;
