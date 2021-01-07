@@ -3,7 +3,7 @@ import { SettingService } from 'src/app/service/setting.service';
 import { ExcuteService } from 'src/app/service/excute.service';
 
 @Component({
-  selector: 'main-monitor',
+  selector: 'app-main-monitor',
   templateUrl: './main-monitor.component.html',
   styleUrls: ['./main-monitor.component.css']
 })

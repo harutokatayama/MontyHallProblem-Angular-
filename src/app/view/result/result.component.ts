@@ -3,7 +3,7 @@ import { ExcuteService } from 'src/app/service/excute.service';
 import { SettingService } from 'src/app/service/setting.service';
 
 @Component({
-  selector: 'result',
+  selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.css']
 })
